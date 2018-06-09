@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Sapi - Time to Read",
+	"version": "1.0",
+	"description": "Find time to read on online articles.",
+	"icons": {
+		"16": "assets/img/icon16.png",
+		"32": "assets/img/icon32.png",
+		"64": "assets/img/icon64.png",
+		"128": "assets/img/icon128.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"16": "assets/img/icon16.png",
+			"32": "assets/img/icon32.png"
+		},
+		"default_title": "Sapi - Time to Read",
+		"default_popup": "main.html"
+	},
+	"background": {
+		"scripts": ["assets/js/background.js"],
+		"persistent": false
+	},
+	"author": "Emmanuel Mark",
+	"offline_enabled": true,
+	"short_name": "Sapi"
+}
