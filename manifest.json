@@ -22,7 +22,7 @@
 		"persistent": false
 	},
 	"permissions": [
-		"storage"
+		"storage", "http://*/*", "https://*/*"
 	],
 	"content_scripts": [
 		{
