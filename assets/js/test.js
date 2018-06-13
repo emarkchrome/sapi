@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 			$('.letsgo').click(function() {
 				$('body').fadeOut(function() {
-
+					window.close();
 				});
 			});
 
