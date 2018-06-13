@@ -44,6 +44,7 @@ $(document).ready(function() {
 			console.log(`[Sapi] Reading speed is ${readingSpeedInWordsPerMinute}wpm.`)
 			var readingSpeedText = document.getElementsByClassName('reading-speed')[0];
 			readingSpeedText.innerHTML = readingSpeedInWordsPerMinute;
+			chrome.storage.sync.set({ readingSpeed: readingSpeedInWordsPerMinute });
 			var modal = document.getElementsByClassName('modal')[0];
 			var stopButton = document.getElementsByClassName('stoptest')[0];
 			modal.classList.add('open');
