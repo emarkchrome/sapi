@@ -25,6 +25,10 @@ p {
 	font-size: 1rem;
 }
 
+span.big {
+	font-size: 1.2rem;
+}
+
 .roboto {
 	font-family: 'Roboto', sans-serif;
 }
