@@ -24,6 +24,12 @@
 	"permissions": [
 		"storage"
 	],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["assets/js/content.js"]
+		}
+	],
 	"author": "Emmanuel Mark",
 	"offline_enabled": true,
 	"short_name": "Sapi"
