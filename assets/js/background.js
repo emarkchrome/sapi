@@ -37,6 +37,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         chrome.browserAction.setIcon({
             imageData: context.getImageData(0, 0, 19, 19)
         });
+				chrome.storage.sync.set({ wordsInArticle: wordsInArticle });
 			});
 		case 'noarticle':
 			chrome.browserAction.setIcon({
