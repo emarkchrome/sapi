@@ -7,18 +7,22 @@
 		<link rel="stylesheet" href="assets/css/options.css">
 	</head>
 	<body>
-		<header>
-			<span>Sapi</span>
-			<span>by Emmanuel Mark</span>
-		</header>
-		<main>
-			<label for="reading-speed-form-range">Change your Reading Speed - <span>200</span><input type="text" id="reading-speed-form-text" value="200" class="di br2 ba pa1 b--black"> words per minute</label>
-			<input type="range" id="reading-speed-form-range" name="points" min="0" max="10">
-			<button type="button">Reset Sapi</button>
-		</main>
-		<footer>
-			<p class="tc">&copy; 2018 Emmanuel Mark &lt;info@emmanuelmark.guru&gt; | Sapi Version 0.1 | Source Code on GitHub | Chrome Web Store Listing | Leave a Review </p>
-		</footer>
+		<div class="fullscreen">
+			<header class="pa3">
+				<span class="playfair f2 pr2">Sapi</span>
+				<span class="roboto f4">by Emmanuel Mark</span>
+			</header>
+			<main class="pa3">
+				<label for="reading-speed-form-range">Change your Reading Speed - <input type="text" id="reading-speed-form-text" value="200" class="di br2 ba pa1 b--black"> words per minute</label><br>
+				<div class="mb3">
+					<input type="range" id="reading-speed-form-range" name="points" min="0" max="500" class="mt3 mb4">
+				</div><br>
+				<span class="button ba b--red button--red pv3 ph5 red br-pill mt1">Reset Sapi</span>
+			</main>
+			<footer>
+				<p class="tc">&copy; 2018 Emmanuel Mark &lt;info@emmanuelmark.guru&gt; | Sapi Version 0.1 | Source Code on GitHub | Chrome Web Store Listing | Leave a Review </p>
+			</footer>
+		</div><!-- .fullscreen -->
 		<script src="assets/js/zepto.min.js" charset="utf-8"></script>
 		<script src="assets/js/options.js" charset="utf-8"></script>
 	</body>
