@@ -13,10 +13,10 @@ var context = canvas.getContext('2d');
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	switch (message.action) {
 		case 'sendwordsinarticle':
-			chrome.storage.sync.get(null, function(data) {
+			chrome.storage.sync.get(function(data) {
 				var wordsInArticle = message.words;
-				console.log('wordsInArticle: ' + wordsInArticle)
-				var timeToReadArticleInMinutes = Math.round(wordsInArticle / /*data.readingSpeed*/ 200);
+				console.log('wordsInArticle: ' + wordsInArticle);
+				var timeToReadArticleInMinutes = Math.round(wordsInArticle / data.readingSpeed);
 
 				canvas.width = 19;
         canvas.height = 19;
