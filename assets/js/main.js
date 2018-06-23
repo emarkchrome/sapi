@@ -12,4 +12,8 @@ $(document).ready(function() {
 		wordsInArticleText.innerText = data.wordsInArticle;
 		minutesToRead.innerText = data.minutesToRead;
 	});
+
+	$('#options-icon').click(function() {
+		chrome.tabs.create({ url: chrome.runtime.getURL('options.html') });
+	});
 });
