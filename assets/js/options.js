@@ -10,7 +10,7 @@ $(document).ready(function() {
 	});
 
 	$('#reading-speed-form-range').change(function() {
-		chrome.storage.sync.set({ readingSpeed: this.value })
+		chrome.storage.sync.set({ readingSpeed: this.value });
 	});
 
 	$('#reading-speed-form-text').focusin(function(event) {
@@ -32,6 +32,7 @@ $(document).ready(function() {
 		} else {
 			var readingSpeedRange = document.getElementById('reading-speed-form-range');
 			readingSpeedRange.value = parseInt(this.value);
+			chrome.storage.sync.set({ readingSpeed: this.value });
 		}
 	});
 
