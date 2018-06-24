@@ -42,6 +42,10 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 				chrome.browserAction.setIcon({
 						path: 'assets/img/icon16.png'
 				});
+			case 'useronboardingcompleted':
+				if(data.userNeedsOnboarding == true) {
+					chrome.storage.sync.set({ userNeedsOnboarding: false });
+				}
 		}
 	});
 });
