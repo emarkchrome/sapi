@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400|Roboto:500');
+
+html {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 16px;
+}
+
+body {
+	background: linear-gradient(180deg, rgba(42, 61, 69, 0.9) 0%, #2A3D45 100%);
+	display: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Playfair Display', serif;
+	line-height: 1.25;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+div.fullscreen {
+	width: 100vw;
+	height: 100vh;
+}
+
+span.button {
+	font-family: 'Roboto', serif;
+}
+
+span.button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: rgba(255, 255, 255, 0.2);
+	letter-spacing: 0.2em;
+	z-index: 1;
+}
