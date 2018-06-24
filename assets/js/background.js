@@ -11,39 +11,39 @@ var context = canvas.getContext('2d');
 
 // Listen for words send from article
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-	switch (message.action) {
-		case 'sendwordsinarticle':
-			chrome.storage.sync.get(function(data) {
+	chrome.storage.sync.get(function(data){
+		switch (message.action) {
+			case 'sendwordsinarticle':
 				var wordsInArticle = message.words;
 				console.log('wordsInArticle: ' + wordsInArticle);
 				var timeToReadArticleInMinutes = Math.round(wordsInArticle / data.readingSpeed);
 
 				canvas.width = 19;
-        canvas.height = 19;
-        //Alter text size depending on timeToRead value
-        if (timeToReadArticleInMinutes >= 100) {
-            context.font = '11px Arial';
-        } else if (timeToReadArticleInMinutes >= 10) {
-            context.font = '15px Arial';
-        } else {
-            context.font = '18px Arial';
-        }
+	      canvas.height = 19;
+	      //Alter text size depending on timeToRead value
+	      if (timeToReadArticleInMinutes >= 100) {
+	          context.font = '11px Arial';
+	      } else if (timeToReadArticleInMinutes >= 10) {
+	          context.font = '15px Arial';
+	      } else {
+	          context.font = '18px Arial';
+	      }
 				context.fillStyle = '#2A3D45';
 				context.fillRect(0, 0, 19, 19);
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-        context.fillStyle = '#FFFFFF';
-        context.fillText(timeToReadArticleInMinutes, 10, 10);
-        chrome.browserAction.setIcon({
-            imageData: context.getImageData(0, 0, 19, 19)
-        });
+	      context.textAlign = 'center';
+	      context.textBaseline = 'middle';
+	      context.fillStyle = '#FFFFFF';
+	      context.fillText(timeToReadArticleInMinutes, 10, 10);
+	      chrome.browserAction.setIcon({
+	          imageData: context.getImageData(0, 0, 19, 19)
+	      });
 				chrome.storage.sync.set({ wordsInArticle: wordsInArticle, minutesToRead: timeToReadArticleInMinutes });
-			});
-		case 'noarticle':
-			chrome.browserAction.setIcon({
-					path: 'assets/img/icon16.png'
-			});
-	}
+			case 'noarticle':
+				chrome.browserAction.setIcon({
+						path: 'assets/img/icon16.png'
+				});
+		}
+	});
 });
 
 chrome.tabs.onActivated.addListener(function() {
