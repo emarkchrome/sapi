@@ -9,6 +9,8 @@ $(document).ready(function() {
 		readingSpeedText.value = data.readingSpeed;
 		readingSpeedRange.value = data.readingSpeed;
 
+		document.getElementById('version').innerText = chrome.runtime.getManifest().version;
+
 		$('body').fadeIn();
 
 		$('#reading-speed-form-range').on('input', function() {
