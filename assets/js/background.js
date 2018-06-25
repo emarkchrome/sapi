@@ -38,14 +38,17 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	          imageData: context.getImageData(0, 0, 19, 19)
 	      });
 				chrome.storage.sync.set({ wordsInArticle: wordsInArticle, minutesToRead: timeToReadArticleInMinutes });
+				break;
 			case 'noarticle':
 				chrome.browserAction.setIcon({
 						path: 'assets/img/icon16.png'
 				});
+				break;
 			case 'useronboardingcompleted':
 				if(data.userNeedsOnboarding == true) {
 					chrome.storage.sync.set({ userNeedsOnboarding: false });
 				}
+				break;
 		}
 	});
 });
