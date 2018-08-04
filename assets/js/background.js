@@ -3,6 +3,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	if (details.reason == "install") {
 		chrome.tabs.create({ url: "welcome.html" });
 	}
+	else if (details.reason == "update" || details.reason == "chrome_update") {
+		chrome.tabs.create({ url: "subscribe.html" });
+	}
 });
 
 //Canvas is used to change the extension icon on the fly
